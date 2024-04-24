@@ -6,7 +6,7 @@ public class Consulta {
 	
 	private String dentitsa;
 	private String auxiliar;
-	private int precoConsulta;
+	private float precoConsulta;
 	private String tipoConsulta;
 	private LocalDateTime dataHora;
 	
@@ -22,7 +22,7 @@ public class Consulta {
 	public void setAuxiliar(String auxiliar) {
 		this.auxiliar = auxiliar;
 	}
-	public int getPrecoConsulta() {
+	public double getPrecoConsulta() {
 		return precoConsulta;
 	}
 	public void setPrecoConsulta(int precoConsulta) {

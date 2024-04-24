@@ -1,11 +1,12 @@
 package ifsc;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-
+ Scanner scan = new Scanner(System.in);
 		ArrayList<Cliente> consultas = new ArrayList<>();
 		
 		int op = 1;
@@ -28,9 +29,17 @@ public class Main {
 			
 		case 2:
 			
-			System.out.println("-Consultas agendadas-");
-			//codigo - jaque
-			break;
+			System.out.println("- Digite a opção desejada. -");
+			System.out.println("- 1 para consultas agendadas.-");
+			System.out.println("- 2 para agendar nova consulta.-");
+			String opcaoConsulta = scan.nextLine();	
+		//  Consulta  consulta = new Consulta();
+		 // consulta.setDentitsa(null);
+		 // consulta.setAuxiliar(null);
+		 // consulta.setTipoConsulta(null);
+		 // consulta.setPrecoConsulta(0);
+		//  consulta.setDataHora(null);
+		break;
 			
 		case 3:
 			
