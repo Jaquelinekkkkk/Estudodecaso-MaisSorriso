@@ -17,14 +17,15 @@ public class Main {
 			System.out.println("-Cadastro do Cliente-");
 			Cliente cadastro = new Cliente();
 			
-			cadastro.setNome(null);
-			cadastro.setCodigo(null);
-			cadastro.setTelefone(null);
-			cadastro.setEndereco(null);
-			cadastro.setCpf(null);
+			cadastro.setNome(cadastro.getNome());
+			cadastro.setSobrenome(cadastro.getSobrenome());
+			cadastro.setCodigo(cadastro.getCodigo());
+			cadastro.setTelefone(cadastro.getTelefone());
+			cadastro.setEndereco(cadastro.getEndereco());
+			cadastro.setCpf(cadastro.getCpf());
 			
 			
-			consultas.add(null);
+			consultas.add(cadastro);
 			break;
 			
 		case 2:

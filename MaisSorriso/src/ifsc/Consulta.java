@@ -2,14 +2,26 @@ package ifsc;
 
 import java.time.LocalDateTime;
 
-public class Consulta {
+public class Consulta{
 	
 	private String dentitsa;
+	private Cliente cliente;
 	private String auxiliar;
 	private float precoConsulta;
 	private String tipoConsulta;
 	private LocalDateTime dataHora;
 	
+	
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	public void setPrecoConsulta(float precoConsulta) {
+		this.precoConsulta = precoConsulta;
+	}
 	public String getDentitsa() {
 		return dentitsa;
 	}
