@@ -31,9 +31,15 @@ public class Main {
 		case 2:
 			
 			System.out.println("- Digite a opção desejada. -");
-			System.out.println("- 1 para consultas agendadas.-");
-			System.out.println("- 2 para agendar nova consulta.-");
+			System.out.println("- 1 para agendar nova consulta.-");
+			System.out.println("- 2 para consultas agendadas.-");
 			String opcaoConsulta = scan.nextLine();	
+			
+			if ( opcaoconsulta = 1 ) {
+				
+			}
+			 System.out.println();
+			
 		//  Consulta  consulta = new Consulta();
 		 // consulta.setDentitsa(null);
 		 // consulta.setAuxiliar(null);
