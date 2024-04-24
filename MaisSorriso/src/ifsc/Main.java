@@ -6,11 +6,16 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
- Scanner scan = new Scanner(System.in);
+
 		ArrayList<Cliente> consultas = new ArrayList<>();
 		
-		int op = 1;
-		switch(op) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Escolha opcao do menu:");
+		String opcaoTxt = scan.nextLine();
+		int opcao = Integer.valueOf(opcaoTxt);
+		
+		switch(opcao) {
 		
 		case 1:
 			
