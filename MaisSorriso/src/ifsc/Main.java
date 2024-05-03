@@ -195,17 +195,19 @@ public class Main {
 					
 					if(consulta.getCodigo() == codigoConsulta) {
 						System.out.println("Consulta encontrada!");
+						System.out.println("Dentista: " + consulta.getDentista());
+						System.out.println("Data e hora: " + consulta.getDataHora());
+						System.out.println("Preco: R$" + consulta.getPrecoConsulta());
+						System.out.println("Codigo" + consulta.getCodigo());
+						System.out.println("Codigo: " + consulta.getCodigo());
+						System.out.println("Cliente: " + consulta.getCliente());
+						System.out.println();
 	
 					}
-					//if(consulta.getCodigo() != codigoConsulta) {
-						//consultanaoencontrada++;
-	
-					//}
+					
 				}
 				
-				//if(consultanaoencontrada = listaConsultas.length) {
-					
-				//}
+				
 			}
 			
 			if(opcaoSubmenu == 2) {
@@ -218,6 +220,13 @@ public class Main {
 					
 					if(cliente.getCodigo() == codigoCliente) {
 						System.out.println("Cliente encontrado!");
+						System.out.println("Nome: " + cliente.getNome());
+						System.out.println("Sobrenome: " + cliente.getSobrenome());
+						System.out.println("CPF: " + cliente.getCpf());
+						System.out.println("Telefone: " + cliente.getTelefone());
+						System.out.println("Endereco: " + cliente.getEndereco());
+						System.out.println("Codigo: " + cliente.getCodigo());
+						System.out.println();	
 	
 					}
 				}
@@ -248,7 +257,7 @@ public class Main {
 					if(consulta.getCodigo() == codigoConsulta) {
 						
 						System.out.println("Qual das opcoes deseja editar?");
-						System.out.println("1-Dentista/n2-Data/n3-Precon/4-Codigon/5-Tipon/6-Cliente");
+						System.out.println("1-Dentista\n2-Data\n3-Precon\n4-Tipon\n5-Cliente");
 						String opcaoAtualizarTxt = scan.nextLine();
 						int opcaoAtualizar = Integer.valueOf(opcaoAtualizarTxt);
 						
@@ -260,38 +269,100 @@ public class Main {
 							System.out.println("Digite o dentista:");
 							String dentista = scan.nextLine();
 							consulta.setDentista(dentista);
+							System.out.println("Cadastro atualizado");
 						}
 						if(opcaoAtualizar == 2) {
 							System.out.println("Digite a data e hora:");
 							String dataHora = scan.nextLine();
 							consulta.setDataHora(dataHora);
+							System.out.println("Cadastro atualizado");
 						}
 						if(opcaoAtualizar == 3) {
 							System.out.println("Digite o preco da consulta:");
 							String precoTxt = scan.nextLine();
 							double precoConsulta = Double.valueOf(precoTxt);
 							consulta.setPrecoConsulta(precoConsulta);
-						}
-						if(opcaoAtualizar == 4) {
-							System.out.println("Digite o codigo:");
-							String codigoTxt = scan.nextLine();
-							int codigo = Integer.valueOf(codigoTxt);
-							consulta.setPrecoConsulta(codigo);
+							System.out.println("Cadastro atualizado");
 						}
 						if(opcaoAtualizar == 5) {
 							System.out.println("Digite o tipo de consulta:");
 							String tipoConsulta = scan.nextLine();
 							consulta.setTipoConsulta(tipoConsulta);
+							System.out.println("Cadastro atualizado");
 						}
 						if(opcaoAtualizar == 6) {
 							System.out.println("Digite o nome do cliente:");
 							String cliente = scan.nextLine();
 							consulta.setCliente(cliente);
+							System.out.println("Cadastro atualizado");
 						}
 						
 	
 					}
 				}
+			}
+			if (opcaoSubmenu == 2) {
+				
+				System.out.println("Digite o codigo do cliente que deseja atualizar:");
+				String codigoClienteTxt = scan.nextLine();
+				int codigoCliente = Integer.valueOf(codigoClienteTxt);
+				
+				for(Cliente cliente : listaClientes) {
+					
+					if(cliente.getCodigo() == codigoCliente) {
+						
+						System.out.println("Qual das opcoes deseja editar?");
+						System.out.println("1-Nome\n2-Sobrenome\n3-CPF\n4-Endereco\n5-Telefone");
+						String opcaoAtualizarTxt = scan.nextLine();
+						int opcaoAtualizar = Integer.valueOf(opcaoAtualizarTxt);
+						
+						while(opcaoAtualizar<1 && opcaoAtualizar>6) {
+							System.out.println();
+						}
+						
+						if(opcaoAtualizar == 1) {
+							System.out.println("Digite o nome:");
+							String nome = scan.nextLine();
+							cliente.setNome(nome);
+							System.out.println("Cadastro atualizado");
+						}
+						
+						if(opcaoAtualizar == 2) {
+							System.out.println("Digite o sobrenome:");
+							String sobrenome = scan.nextLine();
+							cliente.setSobrenome(sobrenome);
+							System.out.println("Cadastro atualizado");
+						}
+						
+						if(opcaoAtualizar == 3) {
+							System.out.println("Digite o CPF:");
+							String cpf = scan.nextLine();
+							cliente.setCpf(cpf);
+							System.out.println("Cadastro atualizado");
+						}
+						
+						if(opcaoAtualizar == 4) {
+							System.out.println("Digite o endereço:");
+							String endereco = scan.nextLine();
+							cliente.setEndereco(endereco);
+							System.out.println("Cadastro atualizado");
+						}
+						
+						if(opcaoAtualizar == 5) {
+							System.out.println("Digite o telefone:");
+							String telefone = scan.nextLine();
+							cliente.setTelefone(telefone);
+							System.out.println("Cadastro atualizado");
+						}
+					}
+						
+					}
+				
+				
+				
+				
+				
+				
 			}
 			
 
