@@ -185,6 +185,7 @@ public class Main {
 			verificaOpcaoSubmenu(opcaoSubmenu);
 			
 			if(opcaoSubmenu == 1) {
+				int consultanaoencontrada=0;
 				
 				System.out.println("Digite o codigo da consulta que procura:");
 				String codigoConsultaTxt = scan.nextLine();
@@ -196,7 +197,15 @@ public class Main {
 						System.out.println("Consulta encontrada!");
 	
 					}
+					//if(consulta.getCodigo() != codigoConsulta) {
+						//consultanaoencontrada++;
+	
+					//}
 				}
+				
+				//if(consultanaoencontrada = listaConsultas.length) {
+					
+				//}
 			}
 			
 			if(opcaoSubmenu == 2) {
@@ -302,6 +311,7 @@ public class Main {
 			opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
 			
 			verificaOpcaoSubmenu(opcaoSubmenu);
+			
 
 			if(opcaoSubmenu == 1) {
 				
@@ -313,11 +323,16 @@ public class Main {
 					
 					if(consulta.getCodigo() == codigoConsulta) {
 						listaConsultas.remove(consulta);
-						
-						System.out.println("Cadastro de consulta removida!");
+												
+						System.out.println("Cadastro de consulta removida!");	
 	
 					}
+
+					if(consulta.getCodigo() != codigoConsulta) {
+												
+						System.out.println("Codigo da consulta nao encontrado!");
 				}
+			}
 			}
 
 			if(opcaoSubmenu == 2) {
