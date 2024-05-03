@@ -26,7 +26,16 @@ public class Main {
 		String opcaoTxt = scan.nextLine();
 		int opcaoMenuPrincipal = Integer.valueOf(opcaoTxt);
 		
+		
 		do {
+			
+			System.out.println("Mais Sorriso - Sistema da Clinica Odontologica");
+			System.out.println("1 - Cadastro de Consulta/Cliente");
+			System.out.println("2 - Mostrar consultas/clientes cadstrados");
+			System.out.println("3 - Buscar consultas/clientes");
+			System.out.println("4 - Atualizar consultas/clientes");
+			System.out.println("5 - Excluir consultas/clientes");
+			System.out.println("6 - Sair");
 			
 			System.out.println("Escolha opcao do menu:");
 			opcaoTxt = scan.nextLine();
@@ -357,19 +366,9 @@ public class Main {
 					}
 						
 					}
-				
-				
-				
-				
-				
-				
+	
 			}
-			
-
-
-			
-			
-			
+	
 			break;
 			
 		case 5:
@@ -428,7 +427,7 @@ public class Main {
 		}
 
 
-		}while(opcaoMenuPrincipal!=6);
+		}while(opcaoMenuPrincipal>=1 && opcaoMenuPrincipal<=6);
 	}
 
 public static void verificaOpcaoSubmenu(int opcaoSubmenu) {
