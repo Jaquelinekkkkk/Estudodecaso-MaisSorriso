@@ -6,7 +6,7 @@ public class Cliente {
 	private String sobrenome;
 	private String cpf;
 	private String endereco;
-	private String codigo;
+	private int codigo;
 	private String telefone;
 	
 	public String getTelefone() {
@@ -15,10 +15,10 @@ public class Cliente {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 	public String getNome() {
