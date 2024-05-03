@@ -243,9 +243,41 @@ public class Main {
 						String opcaoAtualizarTxt = scan.nextLine();
 						int opcaoAtualizar = Integer.valueOf(opcaoAtualizarTxt);
 						
+						while(opcaoAtualizar<1 && opcaoAtualizar>6) {
+							System.out.println();
+						}
+						
 						if(opcaoAtualizar == 1) {
+							System.out.println("Digite o dentista:");
 							String dentista = scan.nextLine();
 							consulta.setDentista(dentista);
+						}
+						if(opcaoAtualizar == 2) {
+							System.out.println("Digite a data e hora:");
+							String dataHora = scan.nextLine();
+							consulta.setDataHora(dataHora);
+						}
+						if(opcaoAtualizar == 3) {
+							System.out.println("Digite o preco da consulta:");
+							String precoTxt = scan.nextLine();
+							double precoConsulta = Double.valueOf(precoTxt);
+							consulta.setPrecoConsulta(precoConsulta);
+						}
+						if(opcaoAtualizar == 4) {
+							System.out.println("Digite o codigo:");
+							String codigoTxt = scan.nextLine();
+							int codigo = Integer.valueOf(codigoTxt);
+							consulta.setPrecoConsulta(codigo);
+						}
+						if(opcaoAtualizar == 5) {
+							System.out.println("Digite o tipo de consulta:");
+							String tipoConsulta = scan.nextLine();
+							consulta.setTipoConsulta(tipoConsulta);
+						}
+						if(opcaoAtualizar == 6) {
+							System.out.println("Digite o nome do cliente:");
+							String cliente = scan.nextLine();
+							consulta.setCliente(cliente);
 						}
 						
 	
