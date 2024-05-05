@@ -330,7 +330,7 @@ public class Main {
 						String opcaoAtualizarTxt = scan.nextLine();
 						int opcaoAtualizar = Integer.valueOf(opcaoAtualizarTxt);
 						
-						while(opcaoAtualizar<1 && opcaoAtualizar>6) {
+						while(opcaoAtualizar<1 && opcaoAtualizar>5) {
 							System.out.println("Opcao inexistente. Digite novamente:");
 							opcaoAtualizarTxt = scan.nextLine();
 							opcaoAtualizar = Integer.valueOf(opcaoAtualizarTxt);
