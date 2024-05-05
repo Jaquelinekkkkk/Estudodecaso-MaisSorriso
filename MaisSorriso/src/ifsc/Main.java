@@ -9,24 +9,12 @@ public class Main {
 
 		ArrayList<Cliente> listaClientes = new ArrayList<>();
 		ArrayList<Consulta> listaConsultas = new ArrayList<>();
-		int qtdConsultas=0;
-		int qtdClientes=0;
+	
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("Mais Sorriso - Sistema da Clinica Odontologica");
-		System.out.println("1 - Cadastro de Consulta/Cliente");
-		System.out.println("2 - Mostrar consultas/clientes cadstrados");
-		System.out.println("3 - Buscar consultas/clientes");
-		System.out.println("4 - Atualizar consultas/clientes");
-		System.out.println("5 - Excluir consultas/clientes");
-		System.out.println("6 - Sair");
-		
-		System.out.println("Escolha opcao do menu:");
-		String opcaoTxt = scan.nextLine();
-		int opcaoMenuPrincipal = Integer.valueOf(opcaoTxt);
-		
-		
+		int opcaoMenuPrincipal = 0;
+				
 		do {
 			
 			System.out.println("Mais Sorriso - Sistema da Clinica Odontologica");
@@ -38,7 +26,7 @@ public class Main {
 			System.out.println("6 - Sair");
 			
 			System.out.println("Escolha opcao do menu:");
-			opcaoTxt = scan.nextLine();
+			String opcaoTxt = scan.nextLine();
 			opcaoMenuPrincipal = Integer.valueOf(opcaoTxt);
 		
 		switch(opcaoMenuPrincipal) {
@@ -49,16 +37,18 @@ public class Main {
 			System.out.println("1 - Cadastrar nova consulta");
 			System.out.println("2 - Cadastrar novo cliente");
 			System.out.println("Digite 1 ou 2:");
+			
 			String opcaoSubmenuTxt = scan.nextLine();
 			int opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
-			
-			verificaOpcaoSubmenu(opcaoSubmenu);
+
+			while(opcaoSubmenu!=1 && opcaoSubmenu!=2) {
+				System.out.println("Opcao inexistente. Digite novamente:");
+				opcaoSubmenuTxt = scan.nextLine();
+				opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
+			}
 			
 			if(opcaoSubmenu == 1) {
 				
-				Consulta[] consultas = new Consulta[10];
-				
-				for(int i=qtdConsultas; i<consultas.length;) {
 			
 				Consulta consulta1 = new Consulta();
 
@@ -84,22 +74,15 @@ public class Main {
 				System.out.println("Cliente:");
 				String nomeCliente = scan.nextLine();
 				consulta1.setCliente(nomeCliente);
-				consultas[i]= consulta1;
 				
-				listaConsultas.add(consultas[i]);
-				qtdConsultas++;
+				listaConsultas.add(consulta1);
+	
 				System.out.println("Consulta cadastrada!");
-				break;
-				
-				}
+				break;			
 				
 			}
 			
 			if(opcaoSubmenu == 2) {
-				
-				Cliente[] clientes = new Cliente[10];
-				
-				for(int i=qtdClientes; i<clientes.length;) {
 				
 				Cliente cliente1 = new Cliente();
 				
@@ -124,15 +107,13 @@ public class Main {
 				String codigoTxt = scan.nextLine();
 				int codigoCliente = Integer.valueOf(codigoTxt);
 				cliente1.setCodigo(codigoCliente);
-				clientes[i] = cliente1;
 					
-				listaClientes.add(clientes[i]);
-				qtdClientes++;
+				listaClientes.add(cliente1);
+				
 				System.out.println("Cliente cadastrado(a)!");
 				break;
 				
 				}
-			}
 			
 			break;
 			
@@ -143,10 +124,15 @@ public class Main {
 			System.out.println("1 - Consultas cadastradas");
 			System.out.println("2 - Clientes cadastrados");
 			System.out.println("Digite 1 ou 2:");
+
 			opcaoSubmenuTxt = scan.nextLine();
 			opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
-			
-			verificaOpcaoSubmenu(opcaoSubmenu);
+
+			while(opcaoSubmenu!=1 && opcaoSubmenu!=2) {
+				System.out.println("Opcao inexistente. Digite novamente:");
+				opcaoSubmenuTxt = scan.nextLine();
+				opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
+			}
 			
 			if (opcaoSubmenu == 1 ){
 				
@@ -157,7 +143,7 @@ public class Main {
 					System.out.println("Dentista: " + consulta.getDentista());
 					System.out.println("Data e hora: " + consulta.getDataHora());
 					System.out.println("Preco: R$" + consulta.getPrecoConsulta());
-					System.out.println("Codigo" + consulta.getCodigo());
+					System.out.println("Tipo de consulta: " + consulta.getTipoConsulta());
 					System.out.println("Codigo: " + consulta.getCodigo());
 					System.out.println("Cliente: " + consulta.getCliente());
 					System.out.println();
@@ -188,13 +174,17 @@ public class Main {
 			System.out.println("1 - Consulta");
 			System.out.println("2 - Cliente");
 			System.out.println("Digite 1 ou 2:");
+
 			opcaoSubmenuTxt = scan.nextLine();
 			opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
-			
-			verificaOpcaoSubmenu(opcaoSubmenu);
+
+			while(opcaoSubmenu!=1 && opcaoSubmenu!=2) {
+				System.out.println("Opcao inexistente. Digite novamente:");
+				opcaoSubmenuTxt = scan.nextLine();
+				opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
+			}
 			
 			if(opcaoSubmenu == 1) {
-				int consultanaoencontrada=0;
 				
 				System.out.println("Digite o codigo da consulta que procura:");
 				String codigoConsultaTxt = scan.nextLine();
@@ -211,6 +201,7 @@ public class Main {
 						System.out.println("Codigo: " + consulta.getCodigo());
 						System.out.println("Cliente: " + consulta.getCliente());
 						System.out.println();
+						break;
 	
 					}
 					
@@ -249,10 +240,16 @@ public class Main {
 			System.out.println("1 - Consulta");
 			System.out.println("2 - Cliente");
 			System.out.println("Digite 1 ou 2:");
+
 			opcaoSubmenuTxt = scan.nextLine();
 			opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
+
+			while(opcaoSubmenu!=1 && opcaoSubmenu!=2) {
+				System.out.println("Opcao inexistente. Digite novamente:");
+				opcaoSubmenuTxt = scan.nextLine();
+				opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
+			}
 			
-			verificaOpcaoSubmenu(opcaoSubmenu);
 			
 			if(opcaoSubmenu == 1) {
 				
@@ -261,7 +258,6 @@ public class Main {
 				int codigoConsulta = Integer.valueOf(codigoConsultaTxt);
 				
 				for(Consulta consulta : listaConsultas) {
-				
 					
 					if(consulta.getCodigo() == codigoConsulta) {
 						
@@ -270,8 +266,10 @@ public class Main {
 						String opcaoAtualizarTxt = scan.nextLine();
 						int opcaoAtualizar = Integer.valueOf(opcaoAtualizarTxt);
 						
-						while(opcaoAtualizar<1 && opcaoAtualizar>6) {
-							System.out.println();
+						while(opcaoAtualizar<1 && opcaoAtualizar>5) {
+							System.out.println("Opcao inexistente. Digite novamente:");
+							opcaoAtualizarTxt = scan.nextLine();
+							opcaoAtualizar = Integer.valueOf(opcaoAtualizarTxt);
 						}
 						
 						if(opcaoAtualizar == 1) {
@@ -279,12 +277,14 @@ public class Main {
 							String dentista = scan.nextLine();
 							consulta.setDentista(dentista);
 							System.out.println("Cadastro atualizado");
+							break; 
 						}
 						if(opcaoAtualizar == 2) {
 							System.out.println("Digite a data e hora:");
 							String dataHora = scan.nextLine();
 							consulta.setDataHora(dataHora);
 							System.out.println("Cadastro atualizado");
+							break;
 						}
 						if(opcaoAtualizar == 3) {
 							System.out.println("Digite o preco da consulta:");
@@ -292,24 +292,29 @@ public class Main {
 							double precoConsulta = Double.valueOf(precoTxt);
 							consulta.setPrecoConsulta(precoConsulta);
 							System.out.println("Cadastro atualizado");
+							break;
 						}
-						if(opcaoAtualizar == 5) {
+						if(opcaoAtualizar == 4) {
 							System.out.println("Digite o tipo de consulta:");
 							String tipoConsulta = scan.nextLine();
 							consulta.setTipoConsulta(tipoConsulta);
 							System.out.println("Cadastro atualizado");
+							break;
 						}
-						if(opcaoAtualizar == 6) {
+						if(opcaoAtualizar == 5) {
 							System.out.println("Digite o nome do cliente:");
 							String cliente = scan.nextLine();
 							consulta.setCliente(cliente);
 							System.out.println("Cadastro atualizado");
-						}
-						
+							break;
+						}	
 	
 					}
+					
 				}
+		
 			}
+			
 			if (opcaoSubmenu == 2) {
 				
 				System.out.println("Digite o codigo do cliente que deseja atualizar:");
@@ -326,7 +331,9 @@ public class Main {
 						int opcaoAtualizar = Integer.valueOf(opcaoAtualizarTxt);
 						
 						while(opcaoAtualizar<1 && opcaoAtualizar>6) {
-							System.out.println();
+							System.out.println("Opcao inexistente. Digite novamente:");
+							opcaoAtualizarTxt = scan.nextLine();
+							opcaoAtualizar = Integer.valueOf(opcaoAtualizarTxt);
 						}
 						
 						if(opcaoAtualizar == 1) {
@@ -334,6 +341,7 @@ public class Main {
 							String nome = scan.nextLine();
 							cliente.setNome(nome);
 							System.out.println("Cadastro atualizado");
+							break;
 						}
 						
 						if(opcaoAtualizar == 2) {
@@ -341,6 +349,7 @@ public class Main {
 							String sobrenome = scan.nextLine();
 							cliente.setSobrenome(sobrenome);
 							System.out.println("Cadastro atualizado");
+							break;
 						}
 						
 						if(opcaoAtualizar == 3) {
@@ -348,6 +357,7 @@ public class Main {
 							String cpf = scan.nextLine();
 							cliente.setCpf(cpf);
 							System.out.println("Cadastro atualizado");
+							break;
 						}
 						
 						if(opcaoAtualizar == 4) {
@@ -355,6 +365,7 @@ public class Main {
 							String endereco = scan.nextLine();
 							cliente.setEndereco(endereco);
 							System.out.println("Cadastro atualizado");
+							break;
 						}
 						
 						if(opcaoAtualizar == 5) {
@@ -362,13 +373,13 @@ public class Main {
 							String telefone = scan.nextLine();
 							cliente.setTelefone(telefone);
 							System.out.println("Cadastro atualizado");
+							break;
 						}
 					}
 						
 					}
 	
 			}
-	
 			break;
 			
 		case 5:
@@ -377,10 +388,15 @@ public class Main {
 			System.out.println("1 - Consulta");
 			System.out.println("2 - Cliente");
 			System.out.println("Digite 1 ou 2:");
+
 			opcaoSubmenuTxt = scan.nextLine();
 			opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
-			
-			verificaOpcaoSubmenu(opcaoSubmenu);
+
+			while(opcaoSubmenu!=1 && opcaoSubmenu!=2) {
+				System.out.println("Opcao inexistente. Digite novamente:");
+				opcaoSubmenuTxt = scan.nextLine();
+				opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
+			}
 			
 
 			if(opcaoSubmenu == 1) {
@@ -392,16 +408,13 @@ public class Main {
 				for(Consulta consulta : listaConsultas) {
 					
 					if(consulta.getCodigo() == codigoConsulta) {
-						listaConsultas.remove(consulta);
-												
-						System.out.println("Cadastro de consulta removida!");	
+						
+						listaConsultas.remove(consulta);												
+						System.out.println("Cadastro de consulta removida!");
+						break;
 	
 					}
 
-					if(consulta.getCodigo() != codigoConsulta) {
-												
-						System.out.println("Codigo da consulta nao encontrado!");
-				}
 			}
 			}
 
@@ -417,27 +430,17 @@ public class Main {
 						listaClientes.remove(cliente);
 						
 						System.out.println("Cadastro de cliente removido!");
-	
+						break;
 					}
 				}
-			}		
-			
+			}
 			break;
-		
+			
+			
 		}
 
 
-		}while(opcaoMenuPrincipal>=1 && opcaoMenuPrincipal<=6);
+		}while(opcaoMenuPrincipal>=1 && opcaoMenuPrincipal<=5);
 	}
 
-public static void verificaOpcaoSubmenu(int opcaoSubmenu) {
-	
-	Scanner scan = new Scanner(System.in);
-
-	while(opcaoSubmenu!=1 && opcaoSubmenu!=2) {
-		System.out.println("Opcao inexistente. Digite novamente:");
-		String opcaoSubmenuTxt = scan.nextLine();
-		opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
-	}
-}
 }
