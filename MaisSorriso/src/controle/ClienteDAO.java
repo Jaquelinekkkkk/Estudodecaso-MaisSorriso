@@ -14,15 +14,15 @@ public class ClienteDAO {
 		this.geradorId = 0;
 	}
 	
-	public int inserir(Cliente cliente1) {
+	public int inserir(Cliente cliente) {
 			
-		if (cliente1 != null) {	
-			cliente1.setId(geradorId);
-			geradorId = geraodrId + 1;		
-			listaClientes.add(cliente1);	
+		if (cliente != null) {	
+			cliente.setId(geradorId);
+			geradorId = geradorId + 1;		
+			listaClientes.add(cliente);	
 		}
 		
-		return cliente1.getId();
+		return cliente.getId();
 	
 	
 	}
@@ -31,5 +31,16 @@ public class ClienteDAO {
     public ArrayList<Cliente> listar() {		
 		return this.listaClientes;
 	}
+    
+    // metodo de buscar    
+    //Cliente clieneteEncontrado = dao.buscarPorId(idDelete);
+    		
+    		
+    //metodo de excluir
+    public boolean remover(Cliente cliente) {
+    	boolean verifica = listaClientes.remove(cliente);
+    	return verifica;
+    }
 
+    //metodo de alterar
 }

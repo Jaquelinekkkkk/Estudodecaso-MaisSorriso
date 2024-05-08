@@ -3,6 +3,7 @@ package visao;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import controle.ClienteDAO;
 import modelo.Cliente;
 import modelo.Consulta;
 
@@ -108,9 +109,9 @@ public class Main {
 				System.out.println("Codigo:");
 				String codigoTxt = scan.nextLine();
 				int codigoCliente = Integer.valueOf(codigoTxt);
-				cliente1.setCodigo(codigoCliente);
+				cliente1.setId(codigoCliente);
 				
-				ClienteDAO= new ClienteDAO();
+				ClienteDAO dao = new ClienteDAO();
 				dao.inserir(cliente1);
 				
 				System.out.println("Cliente cadastrado(a)!");
@@ -164,7 +165,7 @@ public class Main {
 						System.out.println("CPF: " + cliente.getCpf());
 						System.out.println("Telefone: " + cliente.getTelefone());
 						System.out.println("Endereco: " + cliente.getEndereco());
-						System.out.println("Codigo: " + cliente.getCodigo());
+						System.out.println("Codigo: " + cliente.getId());
 						System.out.println();	 
 				}				
 			}
@@ -216,19 +217,19 @@ public class Main {
 			if(opcaoSubmenu == 2) {
 				
 				System.out.println("Digite o codigo do cliente que procura:");
-				String codigoClienteTxt = scan.nextLine();
-				int codigoCliente = Integer.valueOf(codigoClienteTxt);
+				String idClienteTxt = scan.nextLine();
+				int idCliente = Integer.valueOf(idClienteTxt);
 				
 				for(Cliente cliente : listaClientes) {
 					
-					if(cliente.getCodigo() == codigoCliente) {
+					if(cliente.getId() == idCliente) {
 						System.out.println("Cliente encontrado!");
 						System.out.println("Nome: " + cliente.getNome());
 						System.out.println("Sobrenome: " + cliente.getSobrenome());
 						System.out.println("CPF: " + cliente.getCpf());
 						System.out.println("Telefone: " + cliente.getTelefone());
 						System.out.println("Endereco: " + cliente.getEndereco());
-						System.out.println("Codigo: " + cliente.getCodigo());
+						System.out.println("Codigo: " + cliente.getId());
 						System.out.println();	
 	
 					}
@@ -321,12 +322,12 @@ public class Main {
 			if (opcaoSubmenu == 2) {
 				
 				System.out.println("Digite o codigo do cliente que deseja atualizar:");
-				String codigoClienteTxt = scan.nextLine();
-				int codigoCliente = Integer.valueOf(codigoClienteTxt);
+				String idClienteTxt = scan.nextLine();
+				int idCliente = Integer.valueOf(idClienteTxt);
 				
 				for(Cliente cliente : listaClientes) {
 					
-					if(cliente.getCodigo() == codigoCliente) {
+					if(cliente.getId() == idCliente) {
 						
 						System.out.println("Qual das opcoes deseja editar?");
 						System.out.println("1-Nome\n2-Sobrenome\n3-CPF\n4-Endereco\n5-Telefone");
@@ -424,12 +425,12 @@ public class Main {
 			if(opcaoSubmenu == 2) {
 				
 				System.out.println("Digite o codigo do cliente que deseja excluir:");
-				String codigoClienteTxt = scan.nextLine();
-				int codigoCliente = Integer.valueOf(codigoClienteTxt);
+				String idClienteTxt = scan.nextLine();
+				int idCliente = Integer.valueOf(idClienteTxt);
 				
 				for(Cliente cliente : listaClientes) {
 					
-					if(cliente.getCodigo() == codigoCliente) {
+					if(cliente.getId() == idCliente) {
 						listaClientes.remove(cliente);
 						
 						System.out.println("Cadastro de cliente removido!");
