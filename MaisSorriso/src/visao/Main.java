@@ -56,7 +56,6 @@ public class Main {
 				Consulta consulta1 = new Consulta();
 
 				System.out.println("- Cadastrar nova consulta -");
-				
 				System.out.println("Dentista:");
 				String dentista = scan.nextLine();
 				consulta1.setDentista(dentista);
@@ -110,8 +109,9 @@ public class Main {
 				String codigoTxt = scan.nextLine();
 				int codigoCliente = Integer.valueOf(codigoTxt);
 				cliente1.setCodigo(codigoCliente);
-					
-				listaClientes.add(cliente1);
+				
+				ClienteDAO= new ClienteDAO();
+				dao.inserir(cliente1);
 				
 				System.out.println("Cliente cadastrado(a)!");
 				break;
