@@ -8,6 +8,16 @@ public class ClienteDAO {
 	
 	private ArrayList<Cliente> listaClientes;
 	private int geradorId;
+	private static ClienteDAO  instancia; 
+	 
+	public static ClienteDAO getInstancia() { 
+		if(instancia == null) { 
+			instancia = new ClienteDAO(); 
+		} 
+		return instancia; 
+		 
+	} 
+	//Pseudo metodo* 
 	
 	public ClienteDAO() {
 		this.listaClientes = new ArrayList<>();
