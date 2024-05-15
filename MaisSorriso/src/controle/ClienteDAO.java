@@ -24,11 +24,12 @@ public class ClienteDAO {
 		
 		return cliente.getId();
 	
-	//TR
+	
 	}
 	//listar
     public ArrayList<Cliente> listar() {		
 		return this.listaClientes;
+		
 	}
     
     // buscar  

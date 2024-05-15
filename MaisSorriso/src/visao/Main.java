@@ -14,7 +14,7 @@ public class Main {
 		ArrayList<Cliente> listaClientes = new ArrayList<>();
 		ArrayList<Consulta> listaConsultas = new ArrayList<>();
 	
-		//ClienteDAO dao = ClienteDAO.getInstancia();
+		ClienteDAO dao = ClienteDAO.getInstancia();
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -106,13 +106,8 @@ public class Main {
 				cliente1.setTelefone(telefone);
 				System.out.println("Endereco:");
 				String endereco = scan.nextLine();
-				cliente1.setEndereco(endereco);
-				System.out.println("Codigo:");
-				String codigoTxt = scan.nextLine();
-				int codigoCliente = Integer.valueOf(codigoTxt);
-				cliente1.setId(codigoCliente);
-				
-				//dao.inserir(cliente1);
+				cliente1.setEndereco(endereco);			
+				dao.inserir(cliente1);
 				
 				System.out.println("Cliente cadastrado(a)!");
 				break;
@@ -168,7 +163,7 @@ public class Main {
 						System.out.println("Codigo: " + cliente.getId());
 						System.out.println();	
 						
-						dao.listar(cliente);
+						dao.listar();
 				}				
 			}
 			
@@ -233,6 +228,8 @@ public class Main {
 						System.out.println("Endereco: " + cliente.getEndereco());
 						System.out.println("Codigo: " + cliente.getId());
 						System.out.println();	
+						
+						dao.buscarPorId(idCliente);
 	
 					}
 				}
@@ -254,6 +251,7 @@ public class Main {
 				System.out.println("Opcao inexistente. Digite novamente:");
 				opcaoSubmenuTxt = scan.nextLine();
 				opcaoSubmenu = Integer.valueOf(opcaoSubmenuTxt);
+				
 			}
 			
 			
@@ -411,17 +409,14 @@ public class Main {
 				String codigoConsultaTxt = scan.nextLine();
 				int codigoConsulta = Integer.valueOf(codigoConsultaTxt);
 				
-				for(Consulta consulta : listaConsultas) {
 					
-					if(consulta.getCodigo() == codigoConsulta) {
-						
-						listaConsultas.remove(consulta);												
+						dao.removerPorId(codigoConsulta);
 						System.out.println("Cadastro de consulta removida!");
 						break;
+						
 	
-					}
+					
 
-			}
 			}
 
 			if(opcaoSubmenu == 2) {
@@ -430,16 +425,13 @@ public class Main {
 				String idClienteTxt = scan.nextLine();
 				int idCliente = Integer.valueOf(idClienteTxt);
 				
-				for(Cliente cliente : listaClientes) {
+				
 					
-					if(cliente.getId() == idCliente) {
-						listaClientes.remove(cliente);
-						
+					dao.removerPorId(idCliente);						
 						System.out.println("Cadastro de cliente removido!");
 						break;
 					}
-				}
-			}
+			
 			break;
 			
 			
