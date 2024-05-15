@@ -107,6 +107,9 @@ public class Main {
 				String endereco = scan.nextLine();
 				cliente1.setEndereco(endereco);	
 				
+				dao.inserir(cliente1);
+				cliente1.setEndereco(endereco);	
+				
 				dao.inserirId(cliente1);
 				
 				System.out.println("Cliente cadastrado(a)!");
@@ -160,6 +163,21 @@ public class Main {
 					System.out.println("Codigo: " + cliente.getId());
 					System.out.println();	
 		
+										
+					dao.listar(); 
+					
+					for(Cliente cliente : listaClientes) {
+						
+						
+						System.out.println("Nome: " + cliente.getNome());
+						System.out.println("Sobrenome: " + cliente.getSobrenome());
+						System.out.println("CPF: " + cliente.getCpf());
+						System.out.println("Telefone: " + cliente.getTelefone());
+						System.out.println("Endereco: " + cliente.getEndereco());
+						System.out.println("Codigo: " + cliente.getId());
+						System.out.println();	
+						
+				}				
 			}
 			
 		    break;
