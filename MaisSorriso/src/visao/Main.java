@@ -14,6 +14,7 @@ public class Main {
 		ArrayList<Cliente> listaClientes = new ArrayList<>();
 		ArrayList<Consulta> listaConsultas = new ArrayList<>();
 	
+		//ClienteDAO dao = ClienteDAO.getInstancia();
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -111,8 +112,7 @@ public class Main {
 				int codigoCliente = Integer.valueOf(codigoTxt);
 				cliente1.setId(codigoCliente);
 				
-				ClienteDAO dao = new ClienteDAO();
-				dao.inserir(cliente1);
+				//dao.inserir(cliente1);
 				
 				System.out.println("Cliente cadastrado(a)!");
 				break;
@@ -157,7 +157,7 @@ public class Main {
 				if (opcaoSubmenu == 2 ){
 					
 					System.out.println("- Clientes cadastrados -");
-					
+										
 					for(Cliente cliente : listaClientes) {
 						
 						System.out.println("Nome: " + cliente.getNome());
@@ -166,7 +166,9 @@ public class Main {
 						System.out.println("Telefone: " + cliente.getTelefone());
 						System.out.println("Endereco: " + cliente.getEndereco());
 						System.out.println("Codigo: " + cliente.getId());
-						System.out.println();	 
+						System.out.println();	
+						
+						dao.listar(cliente);
 				}				
 			}
 			
