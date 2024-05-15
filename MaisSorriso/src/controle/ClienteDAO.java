@@ -24,7 +24,7 @@ public class ClienteDAO {
 		this.geradorId = 0;
 	}
 	
-	public int inserir(Cliente cliente) {
+	public int inserirId(Cliente cliente) {
 			
 		if (cliente != null) {	
 			cliente.setId(geradorId);
@@ -37,9 +37,9 @@ public class ClienteDAO {
 	
 	}
 	//listar
-    public ArrayList<Cliente> listar() {		
-		return this.listaClientes;
+    public ArrayList<Cliente> listar() {	
 		
+		return this.listaClientes;		
 	}
     
     // buscar  
