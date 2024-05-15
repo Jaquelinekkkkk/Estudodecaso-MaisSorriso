@@ -25,7 +25,7 @@ public class ClienteDAO {
 	}
 	
 	public int inserirId(Cliente cliente) {
-			
+
 		if (cliente != null) {	
 			cliente.setId(geradorId);
 			geradorId = geradorId ++;		
@@ -33,9 +33,9 @@ public class ClienteDAO {
 		}
 		
 		return cliente.getId();
-	
-	
+		
 	}
+	
 	//listar
     public ArrayList<Cliente> listar() {	
 		
