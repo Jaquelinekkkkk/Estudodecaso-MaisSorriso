@@ -18,7 +18,7 @@ public class ClienteDAO {
 			
 		if (cliente != null) {	
 			cliente.setId(geradorId);
-			geradorId = geradorId + 1;		
+			geradorId = geradorId ++;		
 			listaClientes.add(cliente);	
 		}
 		
@@ -26,21 +26,43 @@ public class ClienteDAO {
 	
 	
 	}
-
-	
+	//listar
     public ArrayList<Cliente> listar() {		
 		return this.listaClientes;
 	}
     
-    // metodo de buscar    
+    // buscar  
+    public Cliente buscarPorId(int id) {
+    	for(Cliente cliente : listaClientes) {
+    		if(cliente.getId() == id) {
+    			return cliente;
+    		}
+    	}
+    	return null;
+    	
+    }
     //Cliente clieneteEncontrado = dao.buscarPorId(idDelete);
     		
     		
-    //metodo de excluir
-    public boolean remover(Cliente cliente) {
-    	boolean verifica = listaClientes.remove(cliente);
-    	return verifica;
+    //excluir
+    public Cliente removerPorId(int id) {
+    	for(Cliente cliente : listaClientes) {
+    		if(cliente.getId() == id) {
+    			listaClientes.remove(cliente);
+    		}
+    		
+    	}
+    	return null;
     }
 
-    //metodo de alterar
+    //alterar
+    
+    public Cliente alterarPorId(int id) {
+    	for(Cliente cliente : listaClientes) {
+    		if(cliente.getId() == id) {
+    			
+    		}
+    	}
+    	return null;
+    }
 }
