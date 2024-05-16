@@ -17,62 +17,62 @@ public class ClienteDAO {
 		return instancia; 
 		 
 	} 
-	//Pseudo metodo* 
+	//Pseudo metodo 
 	
 	public ClienteDAO() {
 		this.listaClientes = new ArrayList<>();
-		this.geradorId = 0;
+		this.geradorId = 1;
 	}
 	
-	public int inserirId(Cliente cliente) {
+    //case 1: gerar id
+	public int inserirId(Cliente cliente1) {
 
-		if (cliente != null) {	
-			cliente.setId(geradorId);
-			geradorId = geradorId ++;		
-			listaClientes.add(cliente);	
+		if (cliente1 != null) {	
+			cliente1.setId(geradorId);
+			geradorId ++;		
+			listaClientes.add(cliente1);	
 		}
 		
-		return cliente.getId();
+		return cliente1.getId();
 		
 	}
 	
-	//listar
+	//case 2: listar
     public ArrayList<Cliente> listar() {	
 		
 		return this.listaClientes;		
 	}
     
-    // buscar  
+    //case 3: buscar  
     public Cliente buscarPorId(int id) {
-    	for(Cliente cliente : listaClientes) {
-    		if(cliente.getId() == id) {
-    			return cliente;
+    	for(Cliente cliente1 : listaClientes) {
+    		if(cliente1.getId() == id) {
+    			return cliente1;
     		}
     	}
     	return null;
     	
     }
-    //Cliente clieneteEncontrado = dao.buscarPorId(idDelete);
-    		
-    		
-    //excluir
-    public Cliente removerPorId(int id) {
-    	for(Cliente cliente : listaClientes) {
-    		if(cliente.getId() == id) {
-    			listaClientes.remove(cliente);
+
+    //case 4: alterar
+    
+    public Cliente alterarPorId(int id) {
+    	for(Cliente cliente1 : listaClientes) {
+    		if(cliente1.getId() == id) {
+    			return cliente1;
+    			
     		}
-    		
     	}
     	return null;
     }
-
-    //alterar
     
-    public Cliente alterarPorId(int id) {
-    	for(Cliente cliente : listaClientes) {
-    		if(cliente.getId() == id) {
-    			
+    //case 5: excluir
+    public Cliente removerPorId(int id) {
+    	for(Cliente cliente1 : listaClientes) {
+    		if(cliente1.getId() == id) {
+    			listaClientes.remove(cliente1);
     		}
+    		
     	}
     	return null;
     }
