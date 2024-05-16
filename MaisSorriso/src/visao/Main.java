@@ -57,7 +57,7 @@ public class Main {
 				String endereco = scan.nextLine();
 				cliente1.setEndereco(endereco);	
 				
-				System.out.println("Codigo: " + dao.inserirId(cliente1));
+				System.out.println("ID: " + dao.inserirId(cliente1));
 				
 				System.out.println("Cliente cadastrado(a)!");
 				break;
@@ -75,7 +75,7 @@ public class Main {
 					System.out.println("CPF: " + cliente.getCpf());
 					System.out.println("Telefone: " + cliente.getTelefone());
 					System.out.println("Endereco: " + cliente.getEndereco());
-					System.out.println("Codigo: " + cliente.getId());
+					System.out.println("ID: " + cliente.getId());
 					System.out.println();	
 													
 			}
@@ -87,7 +87,7 @@ public class Main {
 			
 			System.out.println("- Buscar cliente cadastrado -");
 							
-				System.out.println("Digite o codigo do cliente que procura:");
+				System.out.println("Digite o ID do cliente que procura:");
 				
 				String idClienteTxt = scan.nextLine();
 				int idCliente = Integer.valueOf(idClienteTxt);
@@ -98,7 +98,7 @@ public class Main {
 					System.out.println("CPF: " + dao.buscarPorId(idCliente).getCpf());
 					System.out.println("Telefone: " + dao.buscarPorId(idCliente).getTelefone());
 					System.out.println("Endereco: " + dao.buscarPorId(idCliente).getEndereco());
-					System.out.println("Codigo: " + dao.buscarPorId(idCliente).getId());
+					System.out.println("ID: " + dao.buscarPorId(idCliente).getId());
 					System.out.println();	
 									
 			break;
@@ -110,7 +110,7 @@ public class Main {
 
 			
 				
-				System.out.println("Digite o codigo do cliente que deseja atualizar:");
+				System.out.println("Digite o ID do cliente que deseja atualizar:");
 				
 			    idClienteTxt = scan.nextLine();
 				idCliente = Integer.valueOf(idClienteTxt);
@@ -173,7 +173,7 @@ public class Main {
 			
 			System.out.println("- Exclusao de cadastro -");
 				
-				System.out.println("Digite o codigo do cliente que deseja excluir:");
+				System.out.println("Digite o ID do cliente que deseja excluir:");
 				idClienteTxt = scan.nextLine();
 				idCliente = Integer.valueOf(idClienteTxt);
 	
